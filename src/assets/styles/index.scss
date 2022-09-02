@@ -1,0 +1,73 @@
+@import "./vars";
+@import "./fonts";
+
+.container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  flex-direction: column;
+}
+
+.sub-section {
+  margin: 15px;
+  background: none;
+}
+
+.title {
+  background: $gradient-text;
+  font-family: $manrope;
+  font-size: 50px;
+  line-height: 75px;
+  font-weight: 800;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin: 0;
+}
+
+.image {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  background: none;
+}
+
+.image-animation {
+  animation: 3s rotate linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.button-text {
+  margin-top: 10px;
+  color: #686c75;
+  font-family: $manrope;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 27px;
+  text-decoration: none;
+  width: 120px;
+  border-radius: 7%;
+  border: 1px solid;
+}
+
+.button-text:hover {
+  color: #edeff3;
+  border-radius: 0%;
+  border: 1px solid #8a8a8f;
+}

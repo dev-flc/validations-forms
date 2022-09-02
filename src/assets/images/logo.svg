@@ -1,0 +1,32 @@
+<svg width="398" height="412" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter height="200%" width="200%" y="-50%" x="-50%" id="svg_10_blur">
+   <feGaussianBlur stdDeviation="1.5" in="SourceGraphic"/>
+  </filter>
+  <filter id="svg_9_blur">
+   <feGaussianBlur stdDeviation="1.5" in="SourceGraphic"/>
+  </filter>
+  <filter id="svg_8_blur">
+   <feGaussianBlur stdDeviation="1.5" in="SourceGraphic"/>
+  </filter>
+  <filter id="svg_4_blur">
+   <feGaussianBlur stdDeviation="1.5" in="SourceGraphic"/>
+  </filter>
+  <filter id="svg_2_blur">
+   <feGaussianBlur stdDeviation="1.5" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <rect filter="url(#svg_2_blur)" opacity="0.39" stroke-width="0" stroke="#000" id="svg_2" height="400.00001" width="80" y="5.99999" x="4.2973" fill="#444444"/>
+  <rect filter="url(#svg_4_blur)" opacity="0.39" stroke-width="0" stroke="#000" id="svg_4" height="80" width="270" y="325" x="118.2973" fill="#444444"/>
+  <rect opacity="0.39" filter="url(#svg_8_blur)" stroke-width="0" stroke="#000" id="svg_8" height="80" width="270" y="164.54054" x="118.29729" fill="#444444"/>
+  <rect opacity="0.39" filter="url(#svg_9_blur)" stroke-width="0" stroke="#000" id="svg_9" height="80" width="80" y="85" x="117.62161" fill="#444444"/>
+  <rect filter="url(#svg_10_blur)" opacity="0.39" stroke-width="0" y="5.45946" x="117.62161" stroke="#000" id="svg_10" height="80" width="270" fill="#444444"/>
+  <rect stroke-width="0" y="6" x="120.45945" stroke="#000" id="svg_14" height="80" width="270" fill="#2196f3"/>
+  <rect stroke-width="0" stroke="#000" id="svg_15" height="80" width="80" y="85" x="120.45945" fill="#2196f3"/>
+  <rect stroke-width="0" stroke="#000" id="svg_16" height="80" width="270" y="164" x="120.45945" fill="#2196f3"/>
+  <rect stroke-width="0" stroke="#000" id="svg_19" height="80" width="270" y="325.54054" x="120.45946" fill="#155db1"/>
+  <rect stroke-width="0" stroke="#000" id="svg_20" height="400.00001" width="80" y="5.99999" x="7" fill="#002973"/>
+ </g>
+</svg>
