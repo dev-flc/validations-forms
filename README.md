@@ -1,4 +1,3 @@
-
 <div id="top"></div>
 <center>
   <h1 style="
@@ -9,361 +8,432 @@
   font-family: $font-family;
   font-size: 50px;
   line-height: 75px;
-  font-weight: 800;ls
-  "> R E A C T -  T E M P L A T E </h1>
+  font-weight: 800;
+  "> f o r m  -  v a l i d a t o r  -  i n p u t</h1>
 </center>
-<br />
-<div align="center">
-  <a href="https://github.com/ferch01992/react_template">
-    <img src="https://raw.githubusercontent.com/MicaelliMedeiros/micaellimedeiros/master/image/computer-illustration.png" alt="Logo"  min-width="400px" max-width="400px" width="400px" height="300px">
-  </a>
-  <h3 align="center"> F.L.C </h3>
 
-  <img height="50" alt="react" src="https://raw.githubusercontent.com/ferch01992/assets/ced3ee1a5c7c3c8a075a56248b75cd62172bb190/images/ferch01992/logo.svg">
+## **Description**
+
+Libreria
+
+<p align="right"><a href="#top">volver arriba 🔼</a></p>
+
+--------------------------------------------------------------------------------
+
+## **Installation**
+
+```bash
+npm install react validations-form-react
+```
+
+<p align="right"><a href="#top">volver arriba 🔼</a></p>
+
+--------------------------------------------------------------------------------
+
+## **Getting Started**
+
+> ### **Types Of Languages**
+|  name                                                         |           Description               | Default value  |
+| --------------------------------------------------------------|-------------------------------------|----------------|
+| <img src ="https://img.shields.io/badge/EN-success">          | error messages in english language  |      ✅        |
+| <img src ="https://img.shields.io/badge/ES-success">          | error messages in spanish language  |                |
+
+
+> ### **Types Of Validations**
+
+|  name                                                         |           Description                 |
+| --------------------------------------------------------------|---------------------------------------|
+| <img src ="https://img.shields.io/badge/R-success">              | Required data validation           |
+| <img src ="https://img.shields.io/badge/C-success">              | Required data for combo            |
+| <img src ="https://img.shields.io/badge/T-success">              | Text data validation               |
+| <img src ="https://img.shields.io/badge/N-success">              | Number data validation             |
+| <img src ="https://img.shields.io/badge/TN-success">             | Text and number data validation    |
+| <img src ="https://img.shields.io/badge/DATE-success">           | Date data validation               |
+| <img src ="https://img.shields.io/badge/EMAIL-success">          | Email data validation              |
+| <img src ="https://img.shields.io/badge/CURP-success">           | CURP data validation               |
+| <img src ="https://img.shields.io/badge/RFC-success">            | RFC data validation                |
+| <img src ="https://img.shields.io/badge/RFC_KEY_CODE-success">   | RFC KEY code data validation       |
+
+> ### **Parameter description**
 
   <br/>
-  <p align="center">
-    Una impresionante plantilla para impulsar sus proyectos!
-    <br />
-    <a href="https://github.com/ferch01992/template_webpack_5/blob/master/README.md"><strong>Explore los documentos »</strong></a>
-    <br />
-  </p>
-</div>
+  <img src ="https://img.shields.io/badge/Required parameter-success">
+  <img src ="https://img.shields.io/badge/Optional parameter-blue">
 
-<details>
-  <summary style="color:#0078D4;font-size:20px">C O N T E N I  D O</summary>
-  <ol>
-    <li>
-          <a href="#pre-requisitos">Pre-requisitos</a>
-      <ul>
-        <li><a href="#software-previo-y-requerido">Software previo y requerido</a></li>
-        <li><a href="#plugins-previos-y-requeridos-para-vscode">Plugins previos y requeridos para VsCode</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#librerias-generales-del-proyecto">Librerias generales del proyecto</a>
-    </li>
-    <li>
-      <a href="#Configuracion-de-marcadores-de-linea-lf">Convención de commits</a>
-    </li>
-    <li>
-      <a href="#instalacion-de-dependencias">Instalacion de dependencias</a>
-    </li>
-    <li>
-      <a href="#configuración-de-eslint-y-prettier-en-vscode">Configuración de Eslint y Prettier en VSCode</a>
-    </li>
-    <li>
-      <a href="#ejecución-del-proyecto-en-modo-desarrollo">Ejecución del proyecto en modo desarrollo</a>
-    </li>
-     <li>
-          <a href="#estandar-general-de-desarrollo">Estandar general de desarrollo</a>
-      <ul>
-        <li><a href="#nombre-y-extenciones-de-archivos">Nombre y extenciones de archivos</a></li>
-        <li><a href="#nombre-de-variables">Nombre de variables</a></li>
-        <li><a href="#funciones-sin-eventos">Funciones sin eventos</a></li>
-        <li><a href="#funciones-con-eventos">Funciones con eventos</a></li>
-        <li><a href="#idemtación">Idemtación</a></li>
-        <li><a href="#importación-y-exportación-de-componente">Importación y Exportación de componente</a></li>
-        <li><a href="#store">Store</a></li>
-      </ul>
-    </li>
+|  name                                                                 |           Description                             |
+| ----------------------------------------------------------------------|---------------------------------------------------|
+| <img src ="https://img.shields.io/badge/id-success">                  | Input identifier                                  |
+| <img src ="https://img.shields.io/badge/value-success">               | Value to validate,  `String` and   `Number`       |
+| <img src ="https://img.shields.io/badge/type-success">                | Type validation  `["R","T","...","RFC_KEY_CODE"]` |
+| <img src ="https://img.shields.io/badge/title-blue">                  | Title of the entry to validate                    |
+| <img src ="https://img.shields.io/badge/curpMessageError-blue">       | personalized message for CURP                     |
+| <img src ="https://img.shields.io/badge/dateMessageError-blue">       | personalized message for date                     |
+| <img src ="https://img.shields.io/badge/emailMessageError-blue">      | personalized message for email                    |
+| <img src ="https://img.shields.io/badge/numberMessageError-blue">     | personalized message for number                   |
+| <img src ="https://img.shields.io/badge/requiredMessageError-blue">   | personalized message for required                 |
+| <img src ="https://img.shields.io/badge/rfcMessageError-blue">        | personalized message for RFC                      |
+| <img src ="https://img.shields.io/badge/rfckeyCodeMessageError-blue"> | personalized message for RFC KEY CODE             |
+| <img src ="https://img.shields.io/badge/texNumMessageError-blue">     | personalized message for text and number          |
+| <img src ="https://img.shields.io/badge/textMessageError-blue">       | personalized message for text                     |
 
-  </ol>
-</details>
-<br/>
+> ### **Import / Require**
 
-## **Pre-requisitos**
+```javascript
+// ES6+ example
 
---------------------------------------------------------------------------------
+import {
+  singleValidation,
+  multiValidation,
+  multiErrorsValidation,
+} from "form-validator-input";
 
-### **Software previo y requerido**
+singleValidation(DATA);
+multiValidation(DATA);
+multiErrorsValidation(DATA);
 
-| Software | Versión                                                       | Documentación                                                                                                                                                       |
-| -------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Node.js  | <img src ="https://img.shields.io/badge/v14.x >= v16.x-blue"> | [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en/)                                  |
-| Git      | <img src ="https://img.shields.io/badge/latest-brightgreen">  | [![Git](https://img.shields.io/badge/Git-E34F26?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)                                                |
-| VsCode   | <img src ="https://img.shields.io/badge/latest-brightgreen">  | [![VsCode](https://img.shields.io/badge/Visual_studio_code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)](https://code.visualstudio.com/) |
-
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-### **Plugins previos y requeridos para VsCode**
-
-#### **_Pligins:_**
-
-- **EditorConfig for VS Code** [Documentación](https://editorconfig.org/)
-- **Error lens** [Documentación](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens/)
-- **ESLint** [Documentación](https://eslint.org/)
-- **Prettier - Code formatter** [Documentación](https://prettier.io/)
-
-**NOTA:** En caso de utilizar otro editor de código como
-**_[Subliem text](https://www.sublimetext.com/)_** ó
-**_[Vim](https://www.vim.org/), etc._** revisar la documentación de los plugin
-para realizar la instalacion de manera correcta en su editor.
-
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-## **Librerias generales del proyecto:**
-
-| Libreria    | Versión                                                | Documentación                                                                                                                       |
-| ----------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| React       | <img src ="https://img.shields.io/badge/v18.2.0-blue"> | [![Git](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://es.reactjs.org/)        |
-| Redux       | <img src ="https://img.shields.io/badge/v4.2.0-blue">  | [![Redux](https://img.shields.io/badge/Redux-7B42BC?style=for-the-badge&logo=redux&logoColor=white)](https://es.redux.js.org/)      |
-| Webpack     | <img src ="https://img.shields.io/badge/v5.74.0-blue"> | [![Redux](https://img.shields.io/badge/Webpack-0081CB?style=for-the-badge&logo=webpack&logoColor=white)](https://webpack.js.org/)   |
-| Babel       | <img src ="https://img.shields.io/badge/v7.18.10-blue"> | [![Redux](https://img.shields.io/badge/Babel-FFAD19?style=for-the-badge&logo=Babel&logoColor=white)](https://babeljs.io/)           |
-| Material UI | <img src ="https://img.shields.io/badge/v5.10.1-blue">  | [![Redux](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)](https://mui.com/) |
-| Sass        | <img src ="https://img.shields.io/badge/v1.54.4-blue">  | [![Redux](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)          |
-
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-## **Convención de commits**
-
-> Es importante tener en cuanta el estandar ya que si no cumples con el no podras realizar los commits.
-
-[Documentación](https://www.conventionalcommits.org/en/v1.0.0/)
-
-La confirmación contiene los siguientes elementos estructurales para comunicar la intención a los consumidores de su biblioteca:
-
-- fix: un commit del tipo fix corrige un error en su base de código (esto se correlaciona con PATCH en Semantic Versioning).
-
-- feat: un commit del tipo feat introduce una nueva característica en el código base (esto se correlaciona con MENOR en el control de versiones semántico).
-
-- BREAKING CHANGE: un commit que tiene un pie de página BREAKING CHANGE:, o agrega un ! después del tipo/ámbito, introduce un cambio de API importante (que se correlaciona con PRINCIPAL en el control de versiones semántico).
-
-- BREAKING CHANGE: puede ser parte de commits de cualquier tipo.
-se permiten tipos distintos de fix: y feat:, por ejemplo @commitlint/config-conventional (basado en la convención Angular) recomienda build:, chore:, ci:, docs:, style:,
-
-- refactor:, perf:, test: y otros: Se pueden proporcionar pies de página que no sean BREAKING CHANGE: <description> y seguir una convención similar al formato de tráiler de git.
-
-- La especificación de commits convencionales no exige tipos adicionales y no tienen un efecto implícito en el control de versiones semántico (a menos que incluyan un CAMBIO IMPORTANTE). Se puede proporcionar un alcance al tipo de una confirmación, para proporcionar información contextual adicional y está contenido entre paréntesis, por ejemplo, hazaña (analizador): agregar capacidad para analizar matrices.
-
-
-**Ejemplo:**
-![contribution animation](https://github.com/ferch01992/assets/blob/master/images/template-webpack-5/conventional_commit.png?raw=true)
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-## **Instalación de dependencias**
-
-> Ejecutar el siguiente comando para instalar las dependecias del proyecto.
-
-```sh
-npm i ó npm install
 ```
 
+```javascript
+// ES5 example
+
+const {
+  singleValidation,
+  multiValidation,
+  multiErrorsValidation,
+} = require("form-validator-input");
+
+singleValidation(DATA);
+multiValidation(DATA);
+multiErrorsValidation(DATA);
+
+```
+
+```javascript
+No ES+
+
+const formValidatorInput = require("form-validator-input");
+
+formValidatorInput.singleValidation(DATA);
+formValidatorInput.multiValidation(DATA);
+formValidatorInput.multiErrorsValidation(DATA);
+```
 <p align="right"><a href="#top">volver arriba 🔼</a></p>
 
 --------------------------------------------------------------------------------
 
-## **Configuración de Eslint y Prettier en VSCode**
+## **Usage**
 
->Archivo `.vscode/settings.json` de VSCode.
+**Example function _singleValidation()_**
+```javascript
+import { singleValidation } from "form-validator-input";
+/* successful */
+console.log(singleValidation({
+  id: "example_text",
+  title: "TITULO UNO",
+  type: ["T"],
+  value: "texto",
+}))
 
-```json
-  // configuración de Eslint y Prettier
- "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+Result: successful
+{ status: true }
+
+/* successful - more than one validation */
+console.log(singleValidation({
+  id: "example_text",
+  title: "TITULO UNO",
+  type: [ "R", "T" ], // <=== more than one validation
+  value: "texto",
+}))
+
+Result: successful
+{ status: true }
+
+/* error  */
+console.log(singleValidation({
+  id: "example_error_text",
+  type: ["T"],
+  value: 345, // <=== value type number
+}))
+
+Result: error
+{ error: 'El dato no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+
+/* error - title */
+console.log(singleValidation({
+  id: "example_error_text",
+  title: "title", // <=== the title contains information
+  type: ["T"],
+  value: "345", // <=== value type number
+}))
+
+Result: error
+{ error: 'El dato example_text, no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+
+/* error - custom text message */
+console.log(singleValidation({
+  id: "example_error_text",
+  title: "title",
+  type: ["T"],
+  textMessageError: "custom text message", // <=== custom message contains information
+  value: "", // <=== empty value
+}))
+
+Result: custom text message
+{ error: 'custom text message', id: 'example_error_text', status: false }
+
+
+```
+
+
+**Example function _multiValidation()_**
+```javascript
+import { multiValidation } from "form-validator-input";
+
+let const DATA = {
+  {
+    id: "example_text",
+    title: "title required and text",
+    type: ["R","T"],
+    value: "texto",
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+  {
+    id: "example_text",
+    title: "title number",
+    type: ["N"],
+    value: 12345,
   },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "inlineFold.supportedLanguages": [
-    "html",
-    "svelte",
-    "vue",
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact"
-  ],
-  "eslint.probe": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "html",
-    "vue",
-    "markdown"
-  ],
-```
-
-**NOTA:** En caso de utilizar otro editor de código como
-**_[Subliem text](https://www.sublimetext.com/)_** ó
-**_[Vim](https://www.vim.org/), etc._** revisar la documentación de **_[ESLint](https://eslint.org/)_** y **_[Prettier](https://prettier.io/)_**
-
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-## **Ejecución del proyecto en modo desarrollo**
-
-> Ejecutar el siguiente comando en tu terminal.
-
-_**SO Windows**_
-```sh
-npm run dev:win
-```
-
-_**SO Linux**_
-```sh
-npm run dev
-```
-
-_**URL de compilción:**_ [![localhost](https://img.shields.io/badge/127.0.0.1:8080-blue)](http://127.0.0.1:8080)
-
-![alt text](https://github.com/ferch01992/assets/blob/master/images/template-webpack-5/react_templated.jpg?raw=true)
-
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-## **Estandar general de desarrollo**
-
---------------------------------------------------------------------------------
-
-
-### **Nombre y extenciones de archivos**
-
-> Nombre del archivo : El nombre será acorde al contenido del archivo o clase del componente, y será en **_CamelCase_**, como se muestra en el siguiente ejemplo.
-
-```sh
-nameFileExample.js
-```
-
-> Tipos de extensiones :
-
-```sh
-.jsx ,   .js ,  .scss
-```
-
-> Si el contenido del archivo es JSX, la extensión será **.jsx**
-
-> Si el contenido del archivo es JS la extensión será **.js**
-
-> Si el contenido del archivo son estilos la extensión será **.scss**
-
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-
-### **Nombre de variables**
-
-> El nombre de la variable será escrito con CamelCase, como se muestra en el siguiente ejemplo :
-
-```js
-let nombreVariable = ";
-```
-
-> En caso de que la variable sea una constante será escrita con letras mayúsculas separada por guiones bajos, como se muestra en el ejemplo.
-
-```js
-const NOMBRE_VARIABLE = null;
-```
-
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-### **Funciones sin eventos**
-
-> Las funciones sin eventos serán llamadas acorde a la acción o funcionalidad que realizará la misma y será nombrada con **_CamelCase_**, como se muestra en el ejemplo.
-
-```js
-nombreFuncion( ) {
-  console.log( " Hola Template Webpack 5 " )
+  {
+    id: "example_text",
+    title: "title require text and number",
+    type: ["R","TN"],
+    value: "texto 12345",
+  }
 }
-```
 
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-### **Funciones con eventos**
-
-> Ejemplo de eventos.
-
-- onClick
-- onChange
-- etc...
-
-> Las funciones con eventos propios de los componentes, tendrán al inicio la palabra handler y serán llamadas acorde a la acción o funcionalidad que realizará la misma y será nombrada con CamelCase, como se muestra en el ejemplo.
-
-```js
-handlerNombreFuncion( ) {
-    console.log( " Hola Suscribe " )
+let const DATA_ERROR = {
+  {
+    id: "example_text",
+    title: "title required and text",
+    type: ["R","T"],
+    value: "texto",
+  },
+  {
+    id: "example_text",
+    title: "title number",
+    type: ["N"], // validation type number
+    value: "sdfsd", // <=== value type string
+  },
+  {
+    id: "example_text",
+    title: "title require text and number",
+    type: ["R","TN"],
+    value: "", // <=== empty value
+  }
 }
-```
 
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-### **Idemtación**
-
-> La indentación del cada uno de los archivos será acorde al archivo de configuración [.editorconfig](https://editorconfig.org/), en el cual se encuentran las configuraciones de los archivos de acuerdo a su extensiones.
-
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-### **Importación y Exportación de componente**
-
-> Los componentes serán exportados e importados, con el mismo nombre de su clase, ademas sera importado con rutas relativas como se muestra en el ejemplo.
-
-```js
-export default NameComponent.
-
-import NameComponent from ‘./ruta/ruta’
-```
-
-<p align="right"><a href="#top">volver arriba 🔼</a></p>
-
---------------------------------------------------------------------------------
-
-### **Store**
-
-> El store tendrá las siguientes características.
-
-- Un máximo de tres niveles.
-- Claves escritas **_CamelCase_**.
-- No utilizar arreglos.
-
-```js
-const INITIAL_STATE = {
-	claveA : {
-			clave : { ... }
-	},
-	claveB : {
-		claveBUno  : { ... },
-		claveBDos  : { ... },
-		claveBTres : {
-			claveBTresA : { ... },
-			claveBtresB : { ... },
-			claveBtresC : { ... }
-		}
-	},
-	claveC : { ... },
-	claveD : { ... },
-	claveE : { ... },
-	...
+let const DATA_ERROR_CUSTOM_MESSAGE = {
+  {
+    id: "example_text",
+    title: "title required and text",
+    type: ["R","T"],
+    value: "texto",
+  },
+  {
+    id: "example_text",
+    title: "title require text and number",
+    requiredMessageError: 'custom required message',
+    texNumMessageError: 'custom text and number message',
+    type: ["R","TN"],
+    value: "", // <=== empty value
+  },
+  {
+    id: "example_text",
+    title: "title number",
+    type: ["N"], // validation type number
+    value: "sdfsd", // <=== value type string
+  }
 }
+/* successful */
+console.log(multiValidation(DATA))
+
+Result: successful
+{ status: true }
+
+/* error  */
+console.log(multiValidation(DATA_ERROR))
+
+Result: error
+{ status: false, id: "title" }
+
+/* error - title */
+console.log(multiValidation(DATA_ERROR))
+
+Result: error
+{error: 'El dato title number no es válido, ingresa sólo números.', id: 'example_text', status: false}
+
+```
+
+
+**Example function _multiErrorsValidation()_**
+```javascript
+import { multiErrorsValidation } from "form-validator-input";
+let const DATA = {
+  {
+    id: "example_text",
+    title: "title required and text",
+    type: ["R","T"],
+    value: "texto",
+  },
+  {
+    id: "example_text",
+    title: "title number",
+    type: ["N"],
+    value: 12345,
+  },
+  {
+    id: "example_text",
+    title: "title require text and number",
+    type: ["R","TN"],
+    value: "texto 12345",
+  }
+}
+
+let const DATA_ERROR = {
+  {
+    id: "example_text",
+    title: "title required and text",
+    type: ["R","T"],
+    value: "texto",
+  },
+  {
+    id: "example_text",
+    title: "title number",
+    type: ["N"], // validation type number
+    value: "sdfsd", // <=== value type string
+  },
+  {
+    id: "example_text",
+    title: "title require text and number",
+    type: ["R","TN"],
+    value: "", // <=== empty value
+  }
+}
+/* successful */
+console.log(multiErrorsValidation(DATA))
+
+Result: successful
+{ status: true }
+
+/* error  */
+console.log(multiErrorsValidation(DATA_ERROR))
+
+Result: error
+{
+  errors: [
+    { error: 'El dato no es válido, ingresa sólo letras.', id: 'example_text', status: false},
+    { error: 'El dato title number no es válido, ingresa sólo números.', id: 'example_text', status: false},
+    { error: 'custom required message', id: 'example_text', status: false},
+  ];
+  status: false
+}
+
+
+```
+
+
+**Example function type language**
+
+
+**EN**
+
+```javascript
+import { singleValidation } from "form-validator-input";
+// EN
+/* error  */
+console.log(singleValidation({
+  id: "example_error_text",
+  type: ["T"],
+  value: 345, // <=== value type number
+},"EN"))
+
+Result: error
+{ error: 'El dato no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+
+/* error - title */
+console.log(singleValidation({
+  id: "example_error_text",
+  title: "title", // <=== the title contains information
+  type: ["T"],
+  value: "345", // <=== value type number
+},"EN"))
+
+Result: error
+{ error: 'El dato example_text, no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+
+```
+**ES**
+
+```javascript
+import { singleValidation } from "form-validator-input";
+// EN
+/* error  */
+console.log(singleValidation({
+  id: "example_error_text",
+  type: ["T"],
+  value: 345, // <=== value type number
+},"ES"))
+
+Result: error
+{ error: 'El dato no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+
+/* error - title */
+console.log(singleValidation({
+  id: "example_error_text",
+  title: "title", // <=== the title contains information
+  type: ["T"],
+  value: "345", // <=== value type number
+},"ES"))
+
+Result: error
+{ error: 'El dato example_text, no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+
+```
+
+<p align="right"><a href="#top">volver arriba 🔼</a></p>
+
+## **Contributors**
+
+<a href="https://github.com/ferch01992">
+  <img src="https://avatars.githubusercontent.com/u/20364582?v=4" style="border-radius: 50% !important;" min-width="50px" max-width="50px" width="50px" height="50px"/>
+</a>
+
+<p align="right"><a href="#top">volver arriba 🔼</a></p>
+
+## **License MIT**
+
+```
+MIT License
+
+Copyright (c) 2021 Ferch01992
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 ```
 
 <p align="right"><a href="#top">volver arriba 🔼</a></p>

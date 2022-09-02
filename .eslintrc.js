@@ -10,7 +10,7 @@ module.exports = {
     es2022: true,
     node: true,
   },
-  extends: ["plugin:react/recommended", "standard", "prettier"],
+  extends: ["eslint:recommended", "standard", "prettier"],
   settings: {
     react: {
       version: "detect",
@@ -19,13 +19,9 @@ module.exports = {
 
   overrides: [],
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react"],
   rules: {
     "eol-last": RULES_ESTATUS.OFF,
   },

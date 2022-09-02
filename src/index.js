@@ -1,14 +1,3 @@
-import React from "react"
-import { createRoot } from "react-dom/client"
-import { Provider } from "react-redux"
-import { store } from "Store/store.js"
-import { App } from "./app.js"
-
-const container = document.getElementById("app")
-const root = createRoot(container)
-
-root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-)
+export { singleValidation } from "./functions/singleValidation.js"
+export { multiValidation } from "./functions/multiValidation.js"
+export { multiErrorsValidation } from "./functions/multiErrorsValidation.js"

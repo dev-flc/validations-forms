@@ -9,3 +9,5 @@ LICENCE
 .editorconfig
 node_modules/
 public/
+lib/
+example/
