@@ -8,7 +8,7 @@ const {
 import {
   singleValidation,
   multiValidation,
-  multiErrorsValidation,
+  multiValidationErrors,
 } from "./../lib/index.js";
 
 import { DUMMY_DATA } from './dumys.js';
@@ -20,13 +20,19 @@ console.log(
 );
 
 console.log(
-  '%c<== multiValidation ==>',
+  '%c<== multiValidationDos ==>',
   'color:#FF8A71;font-size:1rem;font-weight:bold;,',
   JSON.stringify(multiValidation(DUMMY_DATA), null, 4)
 );
 
 console.log(
-  '%c<== multiErrorsValidation ==>',
+  '%c<== multiValidationErrors ES==>',
   'color:#FF8A71;font-size:1rem;font-weight:bold;,',
-  JSON.stringify(multiErrorsValidation(DUMMY_DATA), null, 4)
+  JSON.stringify(multiValidationErrors(DUMMY_DATA), null, 4)
+);
+
+console.log(
+  '%c<== multiValidationErrors EN==>',
+  'color:#FF8A71;font-size:1rem;font-weight:bold;,',
+  JSON.stringify(multiValidationErrors(DUMMY_DATA,'EN'), null, 4)
 );

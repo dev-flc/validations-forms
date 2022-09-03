@@ -1,31 +1,23 @@
 export const DUMMY_DATA = [
   {
-    curpMessageError: 'custom message for CURP',
-    dateMessageError: 'custom message for DATE',
-    emailMessageError: 'custom message for EMAIL',
     id: 'ONE',
-    numberMessageError: 'custom message for NUMBER',
-    requiredMessageError: 'custom message for REQUIRED',
-    rfcMessageError: 'custom message for RFC',
-    rfckeyCodeMessageError: 'custom message for RFC CLAVE',
-    texNumMessageError: 'custom message for TEXT and NUMBER',
+    title: 'TITLE',
+    type: "T",
+    message:"personalize message",
+    value: "texto one 5",
+  },
 
-    type: ['T'],
-    value: 'texto34',
-  },
   {
-    curpMessageError: 'custom message for CURP',
-    dateMessageError: 'custom message for DATE',
-    emailMessageError: 'custom message for EMAIL',
+    title: 'TITLE',
     id: 'TWO',
-    numberMessageError: 'custom message for NUMBER',
-    requiredMessageError: 'custom message for REQUIRED',
-    rfcMessageError: 'custom message for RFC',
-    rfckeyCodeMessageError: 'custom message for RFC CLAVE',
-    texNumMessageError: 'custom message for TEXT and NUMBER',
-    textMessageError: 'custom message for TEXT',
-    title: 'TITULO TRES',
-    type: 'N',
-    value: '3dfgdf',
+    type: "T",
+    value: "sd3",
   },
+
+  {
+    id: 'TWO',
+    type: ["TN"],
+    value: "231*",
+  }
+
 ];
