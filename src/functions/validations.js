@@ -1,5 +1,4 @@
 import { isValidString, isObject, isString, isArray } from "../utils/utils.js"
-import filter from "lodash/filter"
 import { TYPE_LANGUAGE } from "../constants/constants.js"
 import { EN_MESSAGE_ERRORS } from "./../constants/messages/en.js"
 import { ES_MESSAGE_ERRORS } from "./../constants/messages/es.js"
@@ -72,7 +71,7 @@ export const multiValidationErrors = (data, language = DEFAULT_LANGUAGE) => {
     return singleValidation(NEW_DATA, language)
   })
 
-  const errors = filter(DATA_ERRORS, { status: false })
+  const errors = DATA_ERRORS.filter((item) => item.status === false)
 
   if (errors.length >= 1) {
     result = { ...result, errors, status: false }

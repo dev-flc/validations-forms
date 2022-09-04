@@ -4,18 +4,18 @@ export const DUMMY_DATA = [
     title: 'TITLE',
     type: "T",
     message:"personalize message",
-    value: "texto one 5",
+    value: "texto one",
   },
 
   {
     title: 'TITLE',
     id: 'TWO',
     type: "T",
-    value: "sd3",
+    value: "df4",
   },
 
   {
-    id: 'TWO',
+    id: 'three',
     type: ["TN"],
     value: "231*",
   }

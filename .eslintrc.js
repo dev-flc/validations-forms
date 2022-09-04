@@ -24,5 +24,6 @@ module.exports = {
   },
   rules: {
     "eol-last": RULES_ESTATUS.OFF,
+    "no-prototype-builtins": RULES_ESTATUS.OFF,
   },
 }
