@@ -9,12 +9,15 @@
   font-size: 50px;
   line-height: 75px;
   font-weight: 800;
-  "> f o r m  -  v a l i d a t o r  -  i n p u t</h1>
+  "> v a l i d a t i o n s  -  f o r m s</h1>
 </center>
 
 ## **Description**
 
-Libreria
+
+```
+It is a library that aims to help with form validation in an easy way :)
+```
 
 <p align="right"><a href="#top">volver arriba 🔼</a></p>
 
@@ -23,7 +26,7 @@ Libreria
 ## **Installation**
 
 ```bash
-npm install react validations-form-react
+npm install validations-forms
 ```
 
 <p align="right"><a href="#top">volver arriba 🔼</a></p>
@@ -35,24 +38,26 @@ npm install react validations-form-react
 > ### **Types Of Languages**
 |  name                                                         |           Description               | Default value  |
 | --------------------------------------------------------------|-------------------------------------|----------------|
-| <img src ="https://img.shields.io/badge/EN-success">          | error messages in english language  |      ✅        |
-| <img src ="https://img.shields.io/badge/ES-success">          | error messages in spanish language  |                |
+| <img src ="https://img.shields.io/badge/EN-success">          | error messages in english language  |                |
+| <img src ="https://img.shields.io/badge/ES-success">          | error messages in spanish language  |      ✅        |
 
 
 > ### **Types Of Validations**
 
-|  name                                                         |           Description                 |
-| --------------------------------------------------------------|---------------------------------------|
-| <img src ="https://img.shields.io/badge/R-success">              | Required data validation           |
-| <img src ="https://img.shields.io/badge/C-success">              | Required data for combo            |
-| <img src ="https://img.shields.io/badge/T-success">              | Text data validation               |
-| <img src ="https://img.shields.io/badge/N-success">              | Number data validation             |
-| <img src ="https://img.shields.io/badge/TN-success">             | Text and number data validation    |
-| <img src ="https://img.shields.io/badge/DATE-success">           | Date data validation               |
-| <img src ="https://img.shields.io/badge/EMAIL-success">          | Email data validation              |
-| <img src ="https://img.shields.io/badge/CURP-success">           | CURP data validation               |
-| <img src ="https://img.shields.io/badge/RFC-success">            | RFC data validation                |
-| <img src ="https://img.shields.io/badge/RFC_KEY_CODE-success">   | RFC KEY code data validation       |
+|  name                                                               |           Description                 |
+| --------------------------------------------------------------------|---------------------------------------|
+| <img src ="https://img.shields.io/badge/T-success">                 | Text data validation               |
+| <img src ="https://img.shields.io/badge/R-success">                 | Required data validation           |
+| <img src ="https://img.shields.io/badge/N-success">                 | Number data validation             |
+| <img src ="https://img.shields.io/badge/TN-success">                | Text and number data validation    |
+| <img src ="https://img.shields.io/badge/C-success">                 | Required data for combo            |
+| <img src ="https://img.shields.io/badge/CURP-success">              | CURP data validation               |
+| <img src ="https://img.shields.io/badge/DATE-success">              | Date data validation               |
+| <img src ="https://img.shields.io/badge/EMAIL-success">             | Email data validation              |
+| <img src ="https://img.shields.io/badge/RFC-success">               | RFC data validation                |
+| <img src ="https://img.shields.io/badge/RFC_KEY_CODE-success">      | RFC KEY CODE data validation       |
+| <img src ="https://img.shields.io/badge/POSTAL_CODE-success">       | POSTAL CODE data validation        |
+| <img src ="https://img.shields.io/badge/SPECIAL_CHARACTER-success"> | Special character validation       |
 
 > ### **Parameter description**
 
@@ -60,22 +65,13 @@ npm install react validations-form-react
   <img src ="https://img.shields.io/badge/Required parameter-success">
   <img src ="https://img.shields.io/badge/Optional parameter-blue">
 
-|  name                                                                 |           Description                             |
-| ----------------------------------------------------------------------|---------------------------------------------------|
-| <img src ="https://img.shields.io/badge/id-success">                  | Input identifier                                  |
-| <img src ="https://img.shields.io/badge/value-success">               | Value to validate,  `String` and   `Number`       |
-| <img src ="https://img.shields.io/badge/type-success">                | Type validation  `["R","T","...","RFC_KEY_CODE"]` |
-| <img src ="https://img.shields.io/badge/title-blue">                  | Title of the entry to validate                    |
-| <img src ="https://img.shields.io/badge/curpMessageError-blue">       | personalized message for CURP                     |
-| <img src ="https://img.shields.io/badge/dateMessageError-blue">       | personalized message for date                     |
-| <img src ="https://img.shields.io/badge/emailMessageError-blue">      | personalized message for email                    |
-| <img src ="https://img.shields.io/badge/numberMessageError-blue">     | personalized message for number                   |
-| <img src ="https://img.shields.io/badge/requiredMessageError-blue">   | personalized message for required                 |
-| <img src ="https://img.shields.io/badge/rfcMessageError-blue">        | personalized message for RFC                      |
-| <img src ="https://img.shields.io/badge/rfckeyCodeMessageError-blue"> | personalized message for RFC KEY CODE             |
-| <img src ="https://img.shields.io/badge/texNumMessageError-blue">     | personalized message for text and number          |
-| <img src ="https://img.shields.io/badge/textMessageError-blue">       | personalized message for text                     |
-
+|  name                                                   |           Description                                             |
+| --------------------------------------------------------|-------------------------------------------------------------------|
+| <img src ="https://img.shields.io/badge/id-success">    | Input identifier                                                  |
+| <img src ="https://img.shields.io/badge/value-success"> | Value to validate,  `String` and   `Number`                       |
+| <img src ="https://img.shields.io/badge/type-success">  | Type validation  `["R","T","...","RFC_KEY_CODE"]` OR  `"T"` `"R"` |
+| <img src ="https://img.shields.io/badge/title-blue">    | Title of the entry to validate                                    |
+| <img src ="https://img.shields.io/badge/message-blue">  | personalized message for CURP                                     |
 > ### **Import / Require**
 
 ```javascript
@@ -85,7 +81,7 @@ import {
   singleValidation,
   multiValidation,
   multiErrorsValidation,
-} from "form-validator-input";
+} from "validations-forms";
 
 singleValidation(DATA);
 multiValidation(DATA);
@@ -100,7 +96,7 @@ const {
   singleValidation,
   multiValidation,
   multiErrorsValidation,
-} = require("form-validator-input");
+} = require("validations-forms");
 
 singleValidation(DATA);
 multiValidation(DATA);
@@ -111,7 +107,7 @@ multiErrorsValidation(DATA);
 ```javascript
 No ES+
 
-const formValidatorInput = require("form-validator-input");
+const formValidatorInput = require("validations-forms");
 
 formValidatorInput.singleValidation(DATA);
 formValidatorInput.multiValidation(DATA);
@@ -125,7 +121,7 @@ formValidatorInput.multiErrorsValidation(DATA);
 
 **Example function _singleValidation()_**
 ```javascript
-import { singleValidation } from "form-validator-input";
+import { singleValidation } from "validations-forms";
 /* successful */
 console.log(singleValidation({
   id: "example_text",
@@ -174,12 +170,12 @@ console.log(singleValidation({
   id: "example_error_text",
   title: "title",
   type: ["T"],
-  textMessageError: "custom text message", // <=== custom message contains information
+  message: "custom text message", // <=== custom message contains information
   value: "", // <=== empty value
 }))
 
 Result: custom text message
-{ error: 'custom text message', id: 'example_error_text', status: false }
+{ message: 'custom text message', id: 'example_error_text', status: false }
 
 
 ```
@@ -187,7 +183,7 @@ Result: custom text message
 
 **Example function _multiValidation()_**
 ```javascript
-import { multiValidation } from "form-validator-input";
+import { multiValidation } from "validations-forms";
 
 let const DATA = {
   {
@@ -241,8 +237,7 @@ let const DATA_ERROR_CUSTOM_MESSAGE = {
   {
     id: "example_text",
     title: "title require text and number",
-    requiredMessageError: 'custom required message',
-    texNumMessageError: 'custom text and number message',
+    message: 'custom required message',
     type: ["R","TN"],
     value: "", // <=== empty value
   },
@@ -269,14 +264,14 @@ Result: error
 console.log(multiValidation(DATA_ERROR))
 
 Result: error
-{error: 'El dato title number no es válido, ingresa sólo números.', id: 'example_text', status: false}
+{message: 'El dato title number no es válido, ingresa sólo números.', id: 'example_text', status: false}
 
 ```
 
 
 **Example function _multiErrorsValidation()_**
 ```javascript
-import { multiErrorsValidation } from "form-validator-input";
+import { multiErrorsValidation } from "validations-forms";
 let const DATA = {
   {
     id: "example_text",
@@ -315,6 +310,7 @@ let const DATA_ERROR = {
     id: "example_text",
     title: "title require text and number",
     type: ["R","TN"],
+    message: 'custom required message',
     value: "", // <=== empty value
   }
 }
@@ -330,24 +326,22 @@ console.log(multiErrorsValidation(DATA_ERROR))
 Result: error
 {
   errors: [
-    { error: 'El dato no es válido, ingresa sólo letras.', id: 'example_text', status: false},
-    { error: 'El dato title number no es válido, ingresa sólo números.', id: 'example_text', status: false},
-    { error: 'custom required message', id: 'example_text', status: false},
+    { message: 'El dato no es válido, ingresa sólo letras.', id: 'example_text', status: false},
+    { message: 'El dato title number no es válido, ingresa sólo números.', id: 'example_text', status: false},
+    { message: 'custom required message', id: 'example_text', status: false},
   ];
   status: false
 }
 
 
 ```
-
-
-**Example function type language**
+## Example function type language
 
 
 **EN**
 
 ```javascript
-import { singleValidation } from "form-validator-input";
+import { singleValidation } from "validations-forms";
 // EN
 /* error  */
 console.log(singleValidation({
@@ -357,7 +351,7 @@ console.log(singleValidation({
 },"EN"))
 
 Result: error
-{ error: 'El dato no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+{ message: 'El dato no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
 
 /* error - title */
 console.log(singleValidation({
@@ -368,13 +362,13 @@ console.log(singleValidation({
 },"EN"))
 
 Result: error
-{ error: 'El dato example_text, no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+{ message: 'El dato example_text, no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
 
 ```
 **ES**
 
 ```javascript
-import { singleValidation } from "form-validator-input";
+import { singleValidation } from "validations-forms";
 // EN
 /* error  */
 console.log(singleValidation({
@@ -384,7 +378,7 @@ console.log(singleValidation({
 },"ES"))
 
 Result: error
-{ error: 'El dato no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+{ message: 'El dato no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
 
 /* error - title */
 console.log(singleValidation({
@@ -395,7 +389,7 @@ console.log(singleValidation({
 },"ES"))
 
 Result: error
-{ error: 'El dato example_text, no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+{ message: 'El dato example_text, no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
 
 ```
 

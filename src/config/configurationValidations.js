@@ -3,55 +3,65 @@ import {
   validationsExpression,
   isRequiredCombo,
 } from "./functions.js"
-import { TYPE_VALIDATION } from "./../constants/constants.js"
+import { TYPE_VALIDATION as TV } from "./../constants/constants.js"
 import { EXPRESSIONS as EXP } from "./../constants/expressions.js"
 
 export const configurationValidations = {
-  [TYPE_VALIDATION.R]: {
+  [TV.T]: {
+    expression: EXP[TV.T],
+    func: validationsExpression,
+  },
+
+  [TV.R]: {
     func: isRequired,
   },
 
-  [TYPE_VALIDATION.T]: {
-    expression: EXP[TYPE_VALIDATION.T],
+  [TV.N]: {
+    expression: EXP[TV.N],
     func: validationsExpression,
   },
 
-  [TYPE_VALIDATION.N]: {
-    expression: EXP[TYPE_VALIDATION.N],
+  [TV.TN]: {
+    expression: EXP[TV.TN],
     func: validationsExpression,
   },
 
-  [TYPE_VALIDATION.TN]: {
-    expression: EXP[TYPE_VALIDATION.TN],
-    func: validationsExpression,
-  },
-
-  [TYPE_VALIDATION.DATE]: {
-    expression: EXP[TYPE_VALIDATION.DATE],
-    func: validationsExpression,
-  },
-
-  [TYPE_VALIDATION.EMAIL]: {
-    expression: EXP[TYPE_VALIDATION.EMAIL],
-    func: validationsExpression,
-  },
-
-  [TYPE_VALIDATION.CURP]: {
-    expression: EXP[TYPE_VALIDATION.CURP],
-    func: validationsExpression,
-  },
-
-  [TYPE_VALIDATION.RFC]: {
-    expression: EXP[TYPE_VALIDATION.RFC],
-    func: validationsExpression,
-  },
-
-  [TYPE_VALIDATION.RFC_KEY_CODE]: {
-    expression: EXP[TYPE_VALIDATION.RFC_KEY_CODE],
-    func: validationsExpression,
-  },
-
-  [TYPE_VALIDATION.C]: {
+  [TV.C]: {
     func: isRequiredCombo,
+  },
+
+  [TV.CURP]: {
+    expression: EXP[TV.CURP],
+    func: validationsExpression,
+  },
+
+  [TV.DATE]: {
+    expression: EXP[TV.DATE],
+    func: validationsExpression,
+  },
+
+  [TV.EMAIL]: {
+    expression: EXP[TV.EMAIL],
+    func: validationsExpression,
+  },
+
+  [TV.RFC]: {
+    expression: EXP[TV.RFC],
+    func: validationsExpression,
+  },
+
+  [TV.RFC_KEY_CODE]: {
+    expression: EXP[TV.RFC_KEY_CODE],
+    func: validationsExpression,
+  },
+
+  [TV.POSTAL_CODE]: {
+    expression: EXP[TV.POSTAL_CODE],
+    func: validationsExpression,
+  },
+
+  [TV.SPECIAL_CHARACTER]: {
+    expression: EXP[TV.SPECIAL_CHARACTER],
+    func: validationsExpression,
   },
 }
