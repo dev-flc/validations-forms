@@ -9,7 +9,7 @@
   font-size: 50px;
   line-height: 75px;
   font-weight: 800;
-  "> v a l i d a t i o n s  -  f o r m s  -  f u n c</h1>
+  "> v a l i d a t i o n s  -  f o r m s </h1>
 </center>
 
 ## **Description**
