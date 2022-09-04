@@ -11,3 +11,6 @@ node_modules/
 public/
 lib/
 example/
+package/
+example/
+.github/

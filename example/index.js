@@ -3,13 +3,13 @@ const {
   singleValidation,
   multiValidation,
   multiErrorsValidation,
-} = require("./../lib/index.js");
+} = require("./../package/index.js");
 */
 import {
   singleValidation,
   multiValidation,
   multiValidationErrors,
-} from "./../lib/index.js";
+} from "./../package/index.js";
 
 import { DUMMY_DATA } from './dumys.js';
 
