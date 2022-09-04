@@ -1,6 +1,6 @@
 {
   "name": "validations-forms-func",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "bookshop validations-forms-func",
   "main": "package/index.js",
   "scripts": {
@@ -17,7 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/ferch01992/validations-forms-func.git"
   },
-  "keywords": ["babel/cli"],
+  "keywords": [
+    "babel/cli"
+  ],
   "author": "Ferch01992",
   "license": "MIT",
   "bugs": {
