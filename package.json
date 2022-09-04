@@ -1,8 +1,11 @@
 {
-  "name": "validations-forms-func",
-  "version": "1.0.1",
-  "description": "bookshop validations-forms-func",
+  "name": "validations-forms",
+  "version": "1.0.2",
+  "description": "bookshop validations-forms",
   "main": "package/index.js",
+  "files": [
+    "package"
+  ],
   "scripts": {
     "removeLib": "chmod +x removeLib.sh && ./removeLib.sh",
     "clean": "rm -rf ./package",
@@ -15,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ferch01992/validations-forms-func.git"
+    "url": "git+https://github.com/ferch01992/validations-forms.git"
   },
   "keywords": [
     "babel/cli"
@@ -23,9 +26,9 @@
   "author": "Ferch01992",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ferch01992/validations-forms-func/issues"
+    "url": "https://github.com/ferch01992/validations-forms/issues"
   },
-  "homepage": "https://github.com/ferch01992/validations-forms-func#readme",
+  "homepage": "https://github.com/ferch01992/validations-forms#readme",
   "devDependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "7.18.10",

@@ -26,7 +26,7 @@ It is a library that aims to help with form validation in an easy way :)
 ## **Installation**
 
 ```bash
-npm install validations-forms-func
+npm install validations-forms
 ```
 
 <p align="right"><a href="#top">volver arriba 🔼</a></p>
@@ -81,7 +81,7 @@ import {
   singleValidation,
   multiValidation,
   multiErrorsValidation,
-} from "validations-forms-func";
+} from "validations-forms";
 
 singleValidation(DATA);
 multiValidation(DATA);
@@ -96,7 +96,7 @@ const {
   singleValidation,
   multiValidation,
   multiErrorsValidation,
-} = require("validations-forms-func");
+} = require("validations-forms");
 
 singleValidation(DATA);
 multiValidation(DATA);
@@ -107,7 +107,7 @@ multiErrorsValidation(DATA);
 ```javascript
 No ES+
 
-const formValidatorInput = require("validations-forms-func");
+const formValidatorInput = require("validations-forms");
 
 formValidatorInput.singleValidation(DATA);
 formValidatorInput.multiValidation(DATA);
@@ -121,7 +121,7 @@ formValidatorInput.multiErrorsValidation(DATA);
 
 **Example function _singleValidation()_**
 ```javascript
-import { singleValidation } from "validations-forms-func";
+import { singleValidation } from "validations-forms";
 /* successful */
 console.log(singleValidation({
   id: "example_text",
@@ -183,7 +183,7 @@ Result: custom text message
 
 **Example function _multiValidation()_**
 ```javascript
-import { multiValidation } from "validations-forms-func";
+import { multiValidation } from "validations-forms";
 
 let const DATA = {
   {
@@ -271,7 +271,7 @@ Result: error
 
 **Example function _multiErrorsValidation()_**
 ```javascript
-import { multiErrorsValidation } from "validations-forms-func";
+import { multiErrorsValidation } from "validations-forms";
 let const DATA = {
   {
     id: "example_text",
@@ -341,7 +341,7 @@ Result: error
 **EN**
 
 ```javascript
-import { singleValidation } from "validations-forms-func";
+import { singleValidation } from "validations-forms";
 // EN
 /* error  */
 console.log(singleValidation({
@@ -368,7 +368,7 @@ Result: error
 **ES**
 
 ```javascript
-import { singleValidation } from "validations-forms-func";
+import { singleValidation } from "validations-forms";
 // EN
 /* error  */
 console.log(singleValidation({

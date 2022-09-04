@@ -1,4 +1,4 @@
-name: validations-forms-func
+name: validations-forms
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish-gpr:
-    name: 🚀 publish-validations-forms-func
+    name: 🚀 publish-validations-forms
     runs-on: ubuntu-latest
     permissions:
       contents: read
