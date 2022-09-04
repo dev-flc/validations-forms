@@ -4,20 +4,32 @@ export const DUMMY_DATA = [
     title: 'TITLE',
     type: "T",
     message:"personalize message",
-    value: "texto one 5",
+    value: "texto one",
   },
 
   {
     title: 'TITLE',
     id: 'TWO',
     type: "T",
-    value: "sd3",
+    value: "df4",
   },
 
   {
-    id: 'TWO',
-    type: ["TN"],
-    value: "231*",
+    id: 'three',
+    type: ["POSTAL_CODE"],
+    value: "23144s",
+  },
+
+  {
+    id: 'four',
+    type: ["RFC"],
+    value: "LUCF920804t",
+  },
+
+  {
+    id: 'five',
+    type: ["RFC_KEY_CODE"],
+    value: "LUCF920804LP73",
   }
 
 ];

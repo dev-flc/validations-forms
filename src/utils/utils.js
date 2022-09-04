@@ -29,9 +29,9 @@ export const getResul = (title, id, language, type, message) => {
 
 const GET_MESSAGES = (language, type, title) => {
   if (language === TL.EN) {
-    return EN()[type](title)
+    return EN(type, title)
   } else if (language === TL.ES) {
-    return ES()[type](title)
+    return ES(type, title)
   }
 
   return EN_MESSAGE_ERRORS.ERROR_TYPE_LANGUAGE
