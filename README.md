@@ -16,7 +16,7 @@
 
 
 ```
-It is a library that aims to help with form validation in an easy way :)
+>> It is a library that aims to help with form validation in an easy way :)
 ```
 
 <p align="right"><a href="#top">volver arriba 🔼</a></p>
@@ -401,23 +401,131 @@ console.log(singleValidation({
 ```
 ### Example message custom
 
+
+```
+> To define a custom message you have to add the word "message" + the type of validation
+
+Example:
+{
+  id: 'one',
+  title: 'input one',
+  type: ["R","T"],
+  value: "",
+}
+{
+  id: 'two',
+  title: 'input two',
+  type: ["R","T"],
+  value: "",
+}
+var T = "T";
+
+"messageR" = mesage<string> + type<string>
+
+"messageT" = `message${T}`
+
+Result:
+{
+  id: 'one',
+  title: 'input one',
+  type: ["R","T"],
+  value: "",
+  messageR: "Message custom validation R"
+  messageT: "Message custom validation T"
+}
+
+> you can define the custom message to the validations you want
+
+{
+  id: 'two',
+  title: 'input one',
+  type: ["R","T"],
+  value: "",
+  messageT: "Message custom validation T"
+}
+
+```
+**practical example**
+
 ```javascript
-console.log(singleValidation({
-  id      : "id_input",
-  title   : "input",
-  type    : [ "T" ],
-  message : "message custom example"
-  value   : 345,
-}),"EN") // <=== parameter language
+
+const DATA_ERRORS = [
+  {
+    id: 'one',
+    title: 'input one',
+    type: ["R","T"],
+    value: "",
+    messageT: "Message custom T"
+  },
+  {
+    id: 'two',
+    title: 'input two',
+    type: ["R","T"],
+    value: "",
+    messageR:"Message custom R",
+    messageT: "Message custom T"
+  },
+  {
+    id: 'three',
+    title: 'input three',
+    type: ["R","TN"],
+    value: "54--",
+    messageTN: "Message custom TN"
+  },
+  {
+    id: 'four',
+    title: 'input four',
+    type: ["R","N"],
+    value: "abc",
+    messageR:"Message custom R",
+    messageN: "Message custom N"
+  },
+  {
+    id: 'five',
+    title: 'input five',
+    type: ["R","N"],
+    value: "welcome",
+  },
+  { ... }
+];
+```
+
+```javascript
+console.log(multiValidationErrors(DATA_ERRORS),"EN") // <=== parameter language
 ```
 
 <img src ="https://img.shields.io/badge/Error-red">
 
 ```
 >>> {
-  id      : "id_input"
-  status  : false
-  message : "message custom example"
+  "status": false,
+  "errors": [
+    {
+        "id": "one",
+        "message": "The data input one is required.",
+        "status": false
+    },
+    {
+        "id": "two",
+        "message": "Message custom R",
+        "status": false
+    },
+    {
+        "id": "three",
+        "message": "Message custom TN",
+        "status": false
+    },
+    {
+        "id": "four",
+        "message": "Message custom N",
+        "status": false
+    },
+    {
+        "id": "five",
+        "message": "The data input five is not valid, please enter only numbers",
+        "status": false
+    }
+  ]
 }
 ```
 

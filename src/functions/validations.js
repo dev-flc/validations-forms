@@ -6,7 +6,16 @@ import { configurationValidations } from "../config/configurationValidations.js"
 
 const { DEFAULT_LANGUAGE, ES } = TYPE_LANGUAGE
 
-export const VALIDATIONS_CONFIG = (data) => {
+const GET_CUSTOM_MESSSAGE = ({ type, ...rest }) => {
+  let newMessage = ""
+  const typyMessage = `message${type}`
+  if (rest.hasOwnProperty(typyMessage)) {
+    newMessage = rest[typyMessage]
+  }
+  return newMessage
+}
+
+const VALIDATIONS_CONFIG = (data) => {
   const { type, language } = data
 
   const { ERROR_TYPE_VALIDATION } =
@@ -16,7 +25,7 @@ export const VALIDATIONS_CONFIG = (data) => {
 
   if (configurationValidations[type]) {
     const { expression, func } = configurationValidations[type]
-    result = func({ ...data, expression })
+    result = func({ ...data, expression, message: GET_CUSTOM_MESSSAGE(data) })
   }
 
   return result

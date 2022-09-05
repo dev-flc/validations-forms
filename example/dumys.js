@@ -1,35 +1,38 @@
 export const DUMMY_DATA = [
   {
-    id: 'ONE',
-    title: 'TITLE',
-    type: "T",
-    message:"personalize message",
-    value: "texto one",
+    id: 'one',
+    title: 'input one',
+    type: ["R","T"],
+    value: "",
+    messageT: "Message custom T"
   },
-
   {
-    title: 'TITLE',
-    id: 'TWO',
-    type: "T",
-    value: "df4",
+    id: 'two',
+    title: 'input two',
+    type: ["R","T"],
+    value: "",
+    messageR:"Message custom R",
+    messageT: "Message custom T"
   },
-
   {
     id: 'three',
-    type: ["POSTAL_CODE"],
-    value: "23144s",
+    title: 'input three',
+    type: ["R","TN"],
+    value: "54--",
+    messageTN: "Message custom TN"
   },
-
   {
     id: 'four',
-    type: ["RFC"],
-    value: "LUCF920804t",
+    title: 'input four',
+    type: ["R","N"],
+    value: "abc",
+    messageR:"Message custom R",
+    messageN: "Message custom N"
   },
-
   {
     id: 'five',
-    type: ["RFC_KEY_CODE"],
-    value: "LUCF920804LP73",
-  }
-
+    title: 'input five',
+    type: ["R","N"],
+    value: "welcome",
+  },
 ];
