@@ -26,7 +26,11 @@ It is a library that aims to help with form validation in an easy way :)
 ## **Installation**
 
 ```bash
-npm install validations-forms
+npm i -S validations-forms
+
+OR
+
+npm install --save validations-forms
 ```
 
 <p align="right"><a href="#top">volver arriba 🔼</a></p>
@@ -38,8 +42,8 @@ npm install validations-forms
 > ### **Types Of Languages**
 |  name                                                         |           Description               | Default value  |
 | --------------------------------------------------------------|-------------------------------------|----------------|
-| <img src ="https://img.shields.io/badge/EN-success">          | error messages in english language  |                |
 | <img src ="https://img.shields.io/badge/ES-success">          | error messages in spanish language  |      ✅        |
+| <img src ="https://img.shields.io/badge/EN-success">          | error messages in english language  |                |
 
 
 > ### **Types Of Validations**
@@ -63,15 +67,18 @@ npm install validations-forms
 
   <br/>
   <img src ="https://img.shields.io/badge/Required parameter-success">
+  <br/>
   <img src ="https://img.shields.io/badge/Optional parameter-blue">
 
-|  name                                                   |           Description                                             |
-| --------------------------------------------------------|-------------------------------------------------------------------|
-| <img src ="https://img.shields.io/badge/id-success">    | Input identifier                                                  |
-| <img src ="https://img.shields.io/badge/value-success"> | Value to validate,  `String` and   `Number`                       |
-| <img src ="https://img.shields.io/badge/type-success">  | Type validation  `["R","T","...","RFC_KEY_CODE"]` OR  `"T"` `"R"` |
-| <img src ="https://img.shields.io/badge/title-blue">    | Title of the entry to validate                                    |
-| <img src ="https://img.shields.io/badge/message-blue">  | personalized message for CURP                                     |
+|  name                                                   |           Description                                    |
+| --------------------------------------------------------|----------------------------------------------------------|
+| <img src ="https://img.shields.io/badge/id-success">    | Input identifier                                         |
+| <img src ="https://img.shields.io/badge/value-success"> | Value to validate                                        |
+| <img src ="https://img.shields.io/badge/type-success">  | Type validation  `"ARRAY":["R","T"]` OR  `"STRING" : "T"`|
+| <img src ="https://img.shields.io/badge/title-blue">    | Title of the entry to validate                           |
+| <img src ="https://img.shields.io/badge/message-blue">  | personalized message                                     |
+## **Usage**
+
 > ### **Import / Require**
 
 ```javascript
@@ -80,12 +87,8 @@ npm install validations-forms
 import {
   singleValidation,
   multiValidation,
-  multiErrorsValidation,
+  multiValidationErrors,
 } from "validations-forms";
-
-singleValidation(DATA);
-multiValidation(DATA);
-multiErrorsValidation(DATA);
 
 ```
 
@@ -95,12 +98,8 @@ multiErrorsValidation(DATA);
 const {
   singleValidation,
   multiValidation,
-  multiErrorsValidation,
+  multiValidationErrors,,
 } = require("validations-forms");
-
-singleValidation(DATA);
-multiValidation(DATA);
-multiErrorsValidation(DATA);
 
 ```
 
@@ -111,7 +110,7 @@ const formValidatorInput = require("validations-forms");
 
 formValidatorInput.singleValidation(DATA);
 formValidatorInput.multiValidation(DATA);
-formValidatorInput.multiErrorsValidation(DATA);
+formValidatorInput.multiValidationErrors(DATA);
 ```
 <p align="right"><a href="#top">volver arriba 🔼</a></p>
 
@@ -119,278 +118,307 @@ formValidatorInput.multiErrorsValidation(DATA);
 
 ## **Usage**
 
-**Example function _singleValidation()_**
+### Example function _singleValidation_
+
 ```javascript
 import { singleValidation } from "validations-forms";
-/* successful */
+```
+#### a single validation on an input
+```javascript
 console.log(singleValidation({
-  id: "example_text",
-  title: "TITULO UNO",
-  type: ["T"],
-  value: "texto",
-}))
+  id    : "id_input",
+  title : "input",
+  type  : "T", // OR ["T"] <=== a single validation on an input
+  value : "text",
+}),"EN")
+```
+<img src ="https://img.shields.io/badge/successful-success">
 
-Result: successful
-{ status: true }
-
-/* successful - more than one validation */
+```>>> { status: true }```
+#### more than one validation on the same input
+```javascript
 console.log(singleValidation({
-  id: "example_text",
-  title: "TITULO UNO",
-  type: [ "R", "T" ], // <=== more than one validation
-  value: "texto",
-}))
-
-Result: successful
-{ status: true }
-
-/* error  */
-console.log(singleValidation({
-  id: "example_error_text",
-  type: ["T"],
-  value: 345, // <=== value type number
-}))
-
-Result: error
-{ error: 'El dato no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
-
-/* error - title */
-console.log(singleValidation({
-  id: "example_error_text",
-  title: "title", // <=== the title contains information
-  type: ["T"],
-  value: "345", // <=== value type number
-}))
-
-Result: error
-{ error: 'El dato example_text, no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
-
-/* error - custom text message */
-console.log(singleValidation({
-  id: "example_error_text",
-  title: "title",
-  type: ["T"],
-  message: "custom text message", // <=== custom message contains information
-  value: "", // <=== empty value
-}))
-
-Result: custom text message
-{ message: 'custom text message', id: 'example_error_text', status: false }
-
-
+  id    : "id_input",
+  title : "TITULO UNO",
+  type  : [ "R", "T" ], // <=== more than one validation on the same input,
+  value : "text",
+}),"EN")
 ```
 
+<img src ="https://img.shields.io/badge/successful-success">
 
-**Example function _multiValidation()_**
+```>>> { status: true }```
+
+#### Errors
+```javascript
+console.log(singleValidation({
+  id    : "id_input",
+  title : "input",
+  type  : [ "T" ],
+  value : 345,
+}),"EN")
+```
+
+<img src ="https://img.shields.io/badge/Error-red">
+
+```
+>>> {
+  id      : "id_input"
+  status  : false
+  message : "The data input is not valid, please enter only letters"
+}
+```
+```javascript
+console.log(singleValidation({
+  id: "id_input",
+  title: "input",
+  type: "R",
+  value: "", // null OR undefined
+}),"EN")
+```
+
+<img src ="https://img.shields.io/badge/Error-red">
+
+```
+>>> {
+  id      : "id_input"
+  status  : false
+  message : "The data input is required"
+}
+```
+### Example function _multiValidation_
+
 ```javascript
 import { multiValidation } from "validations-forms";
-
-let const DATA = {
-  {
-    id: "example_text",
-    title: "title required and text",
-    type: ["R","T"],
-    value: "texto",
-  },
-  {
-    id: "example_text",
-    title: "title number",
-    type: ["N"],
-    value: 12345,
-  },
-  {
-    id: "example_text",
-    title: "title require text and number",
-    type: ["R","TN"],
-    value: "texto 12345",
-  }
-}
-
-let const DATA_ERROR = {
-  {
-    id: "example_text",
-    title: "title required and text",
-    type: ["R","T"],
-    value: "texto",
-  },
-  {
-    id: "example_text",
-    title: "title number",
-    type: ["N"], // validation type number
-    value: "sdfsd", // <=== value type string
-  },
-  {
-    id: "example_text",
-    title: "title require text and number",
-    type: ["R","TN"],
-    value: "", // <=== empty value
-  }
-}
-
-let const DATA_ERROR_CUSTOM_MESSAGE = {
-  {
-    id: "example_text",
-    title: "title required and text",
-    type: ["R","T"],
-    value: "texto",
-  },
-  {
-    id: "example_text",
-    title: "title require text and number",
-    message: 'custom required message',
-    type: ["R","TN"],
-    value: "", // <=== empty value
-  },
-  {
-    id: "example_text",
-    title: "title number",
-    type: ["N"], // validation type number
-    value: "sdfsd", // <=== value type string
-  }
-}
-/* successful */
-console.log(multiValidation(DATA))
-
-Result: successful
-{ status: true }
-
-/* error  */
-console.log(multiValidation(DATA_ERROR))
-
-Result: error
-{ status: false, id: "title" }
-
-/* error - title */
-console.log(multiValidation(DATA_ERROR))
-
-Result: error
-{message: 'El dato title number no es válido, ingresa sólo números.', id: 'example_text', status: false}
-
 ```
+#### Datas
 
-
-**Example function _multiErrorsValidation()_**
 ```javascript
-import { multiErrorsValidation } from "validations-forms";
-let const DATA = {
-  {
-    id: "example_text",
-    title: "title required and text",
-    type: ["R","T"],
-    value: "texto",
+const DATA = [
+   {
+    id    : "id_input_one",
+    title : "input_one",
+    type  : ["R","T"],
+    value : "texto",
   },
   {
-    id: "example_text",
-    title: "title number",
-    type: ["N"],
-    value: 12345,
-  },
-  {
-    id: "example_text",
-    title: "title require text and number",
-    type: ["R","TN"],
-    value: "texto 12345",
+    id    : "id_input_two",
+    title : "input_two",
+    type  : "N",
+    value : 2323
   }
-}
+  { ... }
 
-let const DATA_ERROR = {
+];
+
+const DATA_ERRORS = [
   {
-    id: "example_text",
-    title: "title required and text",
-    type: ["R","T"],
-    value: "texto",
+    id    : "id_input_one",
+    title : "input_one",
+    type  : ["R","T"],
+    value : 3434,
   },
   {
-    id: "example_text",
-    title: "title number",
-    type: ["N"], // validation type number
-    value: "sdfsd", // <=== value type string
+    id    : "id_input_two",
+    title : "input_two",
+    type  : "T",
+    value : 12345,
   },
   {
-    id: "example_text",
-    title: "title require text and number",
-    type: ["R","TN"],
-    message: 'custom required message',
-    value: "", // <=== empty value
-  }
-}
-/* successful */
-console.log(multiErrorsValidation(DATA))
+    id    : "id_input_three",
+    title : "input_three",
+    type  : ["R"],
+    value : null,
+  },
+  {
+    id    : "id_input_four",
+    title : "input_four",
+    type  : ["TN"],
+    value : "123abcABC..*",
+  },
+  { ... }
 
-Result: successful
-{ status: true }
+];
+```
 
-/* error  */
-console.log(multiErrorsValidation(DATA_ERROR))
 
-Result: error
-{
-  errors: [
-    { message: 'El dato no es válido, ingresa sólo letras.', id: 'example_text', status: false},
-    { message: 'El dato title number no es válido, ingresa sólo números.', id: 'example_text', status: false},
-    { message: 'custom required message', id: 'example_text', status: false},
-  ];
-  status: false
-}
+```javascript
+console.log(multiValidation(DATA,"EN"))
+```
 
+<img src ="https://img.shields.io/badge/successful-success">
+
+``` >>> { status: true } ```
+
+```javascript
+console.log(multiValidation(DATA_ERRORS,"EN"))
+```
+<img src ="https://img.shields.io/badge/Error-red">
 
 ```
-## Example function type language
+>>> {
+  id      : "id_input_one"
+  status  : false
+  message : "The data input_one is not valid, please enter only letters"
+}
+```
 
+### Example function multiValidationErrors
+
+```javascript
+import { multiValidationErrors } from "validations-forms";
+```
+#### Datas
+
+```javascript
+const DATA = [
+   {
+    id    : "id_input_one",
+    title : "input_one",
+    type  : ["R","T"],
+    value : "texto",
+  },
+  {
+    id    : "id_input_two",
+    title : "input_two",
+    type  : "N",
+    value : 2323
+  }
+  { ... }
+
+];
+
+const DATA_ERRORS = [
+  {
+    id    : "id_input_one",
+    title : "input_one",
+    type  : ["R","T"],
+    value : 3434,
+  },
+  {
+    id    : "id_input_two",
+    title : "input_two",
+    type  : "T",
+    value : 12345,
+  },
+  {
+    id    : "id_input_three",
+    title : "input_three",
+    type  : ["R"],
+    value : null,
+  },
+  {
+    id    : "id_input_four",
+    title : "input_four",
+    type  : ["TN"],
+    value : "123abcABC..*",
+  },
+  { ... }
+
+];
+```
+
+
+```javascript
+console.log(multiValidationErrors(DATA,"EN"))
+```
+
+<img src ="https://img.shields.io/badge/successful-success">
+
+``` >>> { status: true } ```
+
+```javascript
+console.log(multiValidationErrors(DATA_ERRORS,"EN"))
+```
+<img src ="https://img.shields.io/badge/Error-red">
+
+```
+>>> {
+  status : false,
+  errors : [
+    {
+      id      : "id_input_one",
+      status  : false
+      message : "custom message",
+    },
+    {
+      id      : "id_input_two",
+      status  : false
+      message : "The data input_two is not valid, please enter only letters",
+    },
+    {
+      id      : "id_input_three",
+      status  : false
+      message : "The data input_three is required.",
+    },
+    {
+      id      : "id_input_four",
+      status  : false
+      message : "The data input_four is not valid, please enter only letters and numbers",
+    }
+  ]
+}
+```
+
+### Example function type language
 
 **EN**
-
 ```javascript
-import { singleValidation } from "validations-forms";
-// EN
-/* error  */
 console.log(singleValidation({
-  id: "example_error_text",
-  type: ["T"],
-  value: 345, // <=== value type number
-},"EN"))
+  id    : "id_input",
+  title : "input",
+  type  : [ "T" ],
+  value : 345,
+}),"EN") // <=== parameter language
+```
 
-Result: error
-{ message: 'El dato no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
-
-/* error - title */
-console.log(singleValidation({
-  id: "example_error_text",
-  title: "title", // <=== the title contains information
-  type: ["T"],
-  value: "345", // <=== value type number
-},"EN"))
-
-Result: error
-{ message: 'El dato example_text, no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+<img src ="https://img.shields.io/badge/Error-red">
 
 ```
+>>> {
+  id      : "id_input"
+  status  : false
+  message : "The data input is not valid, please enter only letters"
+}
+```
 **ES**
+```javascript
+console.log(singleValidation({
+  id    : "id_input",
+  title : "input",
+  type  : [ "T" ],
+  value : 345,
+}),"ES") // <=== parameter language
+
+ OR
+
+console.log(singleValidation({
+  id    : "id_input",
+  title : "input",
+  type  : [ "T" ],
+  value : 345,
+}))
+```
+### Example message custom
 
 ```javascript
-import { singleValidation } from "validations-forms";
-// EN
-/* error  */
 console.log(singleValidation({
-  id: "example_error_text",
-  type: ["T"],
-  value: 345, // <=== value type number
-},"ES"))
+  id      : "id_input",
+  title   : "input",
+  type    : [ "T" ],
+  message : "message custom example"
+  value   : 345,
+}),"EN") // <=== parameter language
+```
 
-Result: error
-{ message: 'El dato no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
+<img src ="https://img.shields.io/badge/Error-red">
 
-/* error - title */
-console.log(singleValidation({
-  id: "example_error_text",
-  title: "title", // <=== the title contains information
-  type: ["T"],
-  value: "345", // <=== value type number
-},"ES"))
-
-Result: error
-{ message: 'El dato example_text, no es válido, ingresa sólo letras.', id: 'example_error_text', status: false }
-
+```
+>>> {
+  id      : "id_input"
+  status  : false
+  message : "message custom example"
+}
 ```
 
 <p align="right"><a href="#top">volver arriba 🔼</a></p>
