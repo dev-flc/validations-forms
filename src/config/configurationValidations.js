@@ -64,4 +64,8 @@ export const configurationValidations = {
     expression: EXP[TV.SPECIAL_CHARACTER],
     func: validationsExpression,
   },
+
+  [TV.CUSTOM_EXP]: {
+    func: validationsExpression,
+  },
 }

@@ -1,7 +1,15 @@
 import { getResul, isString } from "../utils/utils.js"
+import { EN_MESSAGE_ERRORS } from "./../constants/messages/en.js"
+import { ES_MESSAGE_ERRORS } from "./../constants/messages/es.js"
+import { TYPE_LANGUAGE } from "../constants/constants.js"
 
-const STATUS_TRUE = {
-  status: true,
+const STATUS = {
+  TRUE: {
+    status: true,
+  },
+  FALSE: {
+    status: false,
+  },
 }
 
 /* Required data validation */
@@ -15,7 +23,7 @@ export const isRequired = ({
 }) =>
   value === null || value === "" || value === undefined
     ? getResul(title, id, language, type, message)
-    : STATUS_TRUE
+    : STATUS.TRUE
 
 /* General validations */
 export const validationsExpression = ({
@@ -26,10 +34,20 @@ export const validationsExpression = ({
   id,
   title = "",
   message = "",
-}) =>
-  RegExp(expression).test(isString(value) ? value.trim() : value)
-    ? STATUS_TRUE
-    : getResul(title, id, language, type, message)
+}) => {
+  const { ES } = TYPE_LANGUAGE
+
+  const { ERROR_EXPRESSION } =
+    ES === language ? ES_MESSAGE_ERRORS : EN_MESSAGE_ERRORS
+
+  let result = { ...STATUS.FALSE, message: ERROR_EXPRESSION, id }
+  if (expression) {
+    result = RegExp(expression).test(isString(value) ? value.trim() : value)
+      ? STATUS.TRUE
+      : getResul(title, id, language, type, message)
+  }
+  return result
+}
 
 /* Validation Required Combo */
 export const isRequiredCombo = ({
@@ -45,5 +63,5 @@ export const isRequiredCombo = ({
   value !== -1 &&
   value !== "" &&
   value !== undefined
-    ? STATUS_TRUE
+    ? STATUS.TRUE
     : getResul(title, id, language, type, message)

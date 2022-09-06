@@ -7,6 +7,8 @@ export const EN_MESSAGE_ERRORS = {
   ERROR_TYPE_LANGUAGE:
     'The language property is invalid, please enter only "EN" or "ES"',
   ERROR_TYPE_VALIDATION: "Validation type does not exist :(",
+  ERROR_EXPRESSION: "undefined regular expression :(",
+  ERROR_ID_UNDEFINED: "undefined id :(",
 }
 
 const messageDefault = (title) =>

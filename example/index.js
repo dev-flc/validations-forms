@@ -1,23 +1,18 @@
-/*
-const {
-  singleValidation,
-  multiValidation,
-  multiErrorsValidation,
-} = require("./../package/index.js");
-*/
 import {
   singleValidation,
   multiValidation,
   multiValidationErrors,
+  EXPRESSIONS
 } from "./../package/index.js";
 
 import { DUMMY_DATA } from './dumys.js';
+
 
 console.log(
   '%c<== singleValidation ==>',
   'color:#FF8A71;font-size:1rem;font-weight:bold;,',
   JSON.stringify(singleValidation(DUMMY_DATA[0]), null, 4)
-);
+  );
 
 console.log(
   '%c<== multiValidationDos ==>',
@@ -36,3 +31,5 @@ console.log(
   'color:#FF8A71;font-size:1rem;font-weight:bold;,',
   JSON.stringify(multiValidationErrors(DUMMY_DATA,'EN'), null, 4)
 );
+
+console.log('index.js --> EXPRESSIONS ==>', EXPRESSIONS)

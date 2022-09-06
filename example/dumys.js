@@ -1,10 +1,9 @@
 export const DUMMY_DATA = [
   {
-    id: 'one',
     title: 'input one',
-    type: ["R","T"],
-    value: "",
-    messageT: "Message custom T"
+    value: "3",
+    messageT: "Message custom T",
+    expression:/[0-9]/
   },
   {
     id: 'two',
@@ -34,5 +33,5 @@ export const DUMMY_DATA = [
     title: 'input five',
     type: ["R","N"],
     value: "welcome",
-  },
+  }
 ];

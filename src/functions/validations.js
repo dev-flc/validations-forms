@@ -1,46 +1,16 @@
-import { isValidString, isObject, isString, isArray } from "../utils/utils.js"
+import {
+  isValidString,
+  isObject,
+  isString,
+  isArray,
+  LOOP_TYPE_VALIDATIONS,
+  VALIDATIONS_CONFIG,
+} from "../utils/utils.js"
 import { TYPE_LANGUAGE } from "../constants/constants.js"
 import { EN_MESSAGE_ERRORS } from "./../constants/messages/en.js"
 import { ES_MESSAGE_ERRORS } from "./../constants/messages/es.js"
-import { configurationValidations } from "../config/configurationValidations.js"
 
 const { DEFAULT_LANGUAGE, ES } = TYPE_LANGUAGE
-
-const GET_CUSTOM_MESSSAGE = ({ type, ...rest }) => {
-  let newMessage = ""
-  const typyMessage = `message${type}`
-  if (rest.hasOwnProperty(typyMessage)) {
-    newMessage = rest[typyMessage]
-  }
-  return newMessage
-}
-
-const VALIDATIONS_CONFIG = (data) => {
-  const { type, language } = data
-
-  const { ERROR_TYPE_VALIDATION } =
-    ES === language ? ES_MESSAGE_ERRORS : EN_MESSAGE_ERRORS
-
-  let result = { message: ERROR_TYPE_VALIDATION, status: false }
-
-  if (configurationValidations[type]) {
-    const { expression, func } = configurationValidations[type]
-    result = func({ ...data, expression, message: GET_CUSTOM_MESSSAGE(data) })
-  }
-
-  return result
-}
-
-const LOOP_TYPE_VALIDATIONS = (type, data, language) => {
-  let result
-  for (const NEW_TYPE of type) {
-    result = VALIDATIONS_CONFIG({ ...data, type: NEW_TYPE, language })
-    if (result.status === false) {
-      break
-    }
-  }
-  return result
-}
 
 export const singleValidation = (data, language = DEFAULT_LANGUAGE) => {
   const { ERROR_TYPE_ARRAY, ERROR_TYPE_OBJECT } =

@@ -8,6 +8,8 @@ export const ES_MESSAGE_ERRORS = {
   ERROR_TYPE_LANGUAGE:
     'La propiedad de idioma no es válida, ingrese solo "EN" o "ES".',
   ERROR_TYPE_VALIDATION: "El tipo de validacion no existe :(",
+  ERROR_EXPRESSION: "expresión regular indefinida :(",
+  ERROR_ID_UNDEFINED: "id indefinido :(",
 }
 
 const messageDefault = (title) =>
