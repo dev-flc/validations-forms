@@ -33,5 +33,11 @@ export const DUMMY_DATA = [
     title: 'input five',
     type: ["R","N"],
     value: "welcome",
+  },
+  {
+    id: 'pass',
+    title: 'contraseña',
+    type: ["R","PASSWORD"],
+    value: "welcomeK.@",
   }
 ];

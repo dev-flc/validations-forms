@@ -55,6 +55,11 @@ export const configurationValidations = {
     func: validationsExpression,
   },
 
+  [TV.PASSWORD]: {
+    expression: EXP[TV.PASSWORD],
+    func: validationsExpression,
+  },
+
   [TV.POSTAL_CODE]: {
     expression: EXP[TV.POSTAL_CODE],
     func: validationsExpression,
