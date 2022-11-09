@@ -14,7 +14,7 @@ export const ES_MESSAGE_ERRORS = {
 
 const messageDefault = (title) =>
   isValidString(title)
-    ? `El dato ${title} no es válido`
+    ? `El dato ${title}, no es válido`
     : `El dato no es válido`
 
 export const GET_MESSAGE = () => ({
@@ -25,7 +25,7 @@ export const GET_MESSAGE = () => ({
 
   [TV.R]: (title) =>
     isValidString(title)
-      ? `El dato ${title} es requerido`
+      ? `El dato ${title}, es requerido`
       : `El dato es requerido`,
 
   [TV.N]: (title) =>
@@ -40,8 +40,16 @@ export const GET_MESSAGE = () => ({
 
   [TV.C]: (title) =>
     isValidString(title)
-      ? `El dato ${title} es requerido`
+      ? `El dato ${title}, es requerido`
       : `El dato es requerido`,
+
+  [TV.PASSWORD_LOWERCASE]: () => "Al menos una letra minúscula",
+  [TV.PASSWORD_UPPERCASE]: () => "Al menos una letra mayúscula",
+  [TV.PASSWORD_DIGIT]: () => "Al menos un dígito",
+  [TV.PASSWORD_SPECIAL_CHARACTER]: () => "Al menos un carácter especial",
+  [TV.PASSWORD_MIN]: () => "Mínimo 8 de longitud",
+  [TV.PASSWORD_MAX]: () => "Máximo 15 de longitud",
+  [TV.PASSWORD_BLANK_SPACE]: () => "No espacios vacíos.",
 })
 
 export const ES = (type, title) => {

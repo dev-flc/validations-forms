@@ -22,8 +22,15 @@ export const EXPRESSIONS = {
 
   [TV.POSTAL_CODE]: /(^([0-9]{5,5})|^)$/,
 
-  [TV.PASSWORD]:
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/,
+  [TV.PASSWORD]: {
+    [TV.PASSWORD_LOWERCASE]: /(?=.*?[a-z])/,
+    [TV.PASSWORD_UPPERCASE]: /(?=.*?[A-Z])/,
+    [TV.PASSWORD_DIGIT]: /(?=.*?[0-9])/,
+    [TV.PASSWORD_SPECIAL_CHARACTER]: /(?=.*?[$@$!%*?&])/,
+    [TV.PASSWORD_MIN]: /.{8,}/,
+    [TV.PASSWORD_MAX]: /^.{8,15}$/,
+    [TV.PASSWORD_BLANK_SPACE]: /\s/,
+  },
 
   [TV.SPECIAL_CHARACTER]:
     /^([a-z ñáäéëíïóöúüÑÁÄÉËÍÏÓÖÚÜ A-Z0-9 ‘,\-:;\\#/¿()´¨&"_*.%¿?$¡!@+¨]*$)|(\n[a-z ñáäéëíïóöúüÑÁÄÉËÍÏÓÖÚÜ A-Z0-9 ‘,\-:;\\#/()´¨&"_*.%¿?$¡!@+¨]{1,}$)/,

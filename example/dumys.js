@@ -1,5 +1,19 @@
 export const DUMMY_DATA = [
   {
+    id: 'pass',
+    title: 'contraseña',
+    type: ["R","PASSWORD"],
+    value: "example",
+  },
+  {
+    id: 'two',
+    title: 'input two',
+    type: ["R","T"],
+    value: "",
+    messageR:"Message custom R",
+    messageT: "Message custom T"
+  },
+  {
     title: 'input one',
     value: "3",
     messageT: "Message custom T",
@@ -33,11 +47,5 @@ export const DUMMY_DATA = [
     title: 'input five',
     type: ["R","N"],
     value: "welcome",
-  },
-  {
-    id: 'pass',
-    title: 'contraseña',
-    type: ["R","PASSWORD"],
-    value: "welcomeK.@",
   }
 ];

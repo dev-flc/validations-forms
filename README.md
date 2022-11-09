@@ -61,6 +61,7 @@ npm install --save validations-forms
 | <img src ="https://img.shields.io/badge/RFC-success">               | RFC data validation                |
 | <img src ="https://img.shields.io/badge/RFC_KEY_CODE-success">      | RFC KEY CODE data validation       |
 | <img src ="https://img.shields.io/badge/POSTAL_CODE-success">       | POSTAL CODE data validation        |
+| <img src ="https://img.shields.io/badge/PASSWORD-success">          | PASSWORD data validation           |
 | <img src ="https://img.shields.io/badge/SPECIAL_CHARACTER-success"> | Special character validation       |
 | <img src ="https://img.shields.io/badge/CUSTOM_EXP-success">        | Special character validation       |
 
@@ -593,6 +594,63 @@ console.log( multiValidationErrors( DATA_ERRORS ), "EN" ) // <=== parameter lang
   ]
 }
 ```
+
+### Example validation type password
+
+**EN**
+```javascript
+console.log( singleValidation( {
+  id: 'password',
+  type: ["R","PASSWORD"],
+  value: "sasasd983443@s",
+} ), "EN" ) // <=== parameter language
+```
+**validatios password**
+
+* At least one lowercase letter
+* At least one uppercase letter
+* At least one digit
+* At least one special character
+* Minimum 8 in length
+* Maximum 8 in length
+
+<img src ="https://img.shields.io/badge/Error-red">
+
+```
+>>> {
+  "status": false,
+    "id": "password",
+    "data": [
+        {
+            "status": true,
+            "type": "PASSWORD_LOWERCASE"
+        },
+        {
+            "id": "pass",
+            "message": "At least one uppercase letter",
+            "status": false,
+            "type": "PASSWORD_UPPERCASE"
+        },
+        {
+            "status": true,
+            "type": "PASSWORD_DIGIT"
+        },
+        {
+            "status": true,
+            "type": "PASSWORD_SPECIAL_CHARACTER"
+        },
+        {
+            "status": true,
+            "type": "PASSWORD_MIN"
+        },
+        {
+            "status": true,
+            "type": "PASSWORD_MAX"
+        }
+    ]
+}
+```
+
 
 <p align="right"><a href="#top">volver arriba 🔼</a></p>
 

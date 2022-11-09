@@ -1,6 +1,7 @@
 import {
   isRequired,
   validationsExpression,
+  validationsPassword,
   isRequiredCombo,
 } from "./functions.js"
 import { TYPE_VALIDATION as TV } from "./../constants/constants.js"
@@ -57,7 +58,7 @@ export const configurationValidations = {
 
   [TV.PASSWORD]: {
     expression: EXP[TV.PASSWORD],
-    func: validationsExpression,
+    func: validationsPassword,
   },
 
   [TV.POSTAL_CODE]: {
