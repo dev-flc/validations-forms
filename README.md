@@ -16,7 +16,7 @@
 
 
 ```
->> It is a library that aims to help with form validation in an easy way :)
+ It is a library that aims to help with form validation in an easy way :)
 ```
 
 <p align="right"><a href="#top">volver arriba 🔼</a></p>
@@ -61,7 +61,8 @@ npm install --save validations-forms
 | <img src ="https://img.shields.io/badge/RFC-success">               | RFC data validation                |
 | <img src ="https://img.shields.io/badge/RFC_KEY_CODE-success">      | RFC KEY CODE data validation       |
 | <img src ="https://img.shields.io/badge/POSTAL_CODE-success">       | POSTAL CODE data validation        |
-| <img src ="https://img.shields.io/badge/PASSWORD-success">          | PASSWORD data validation           |
+| <img src ="https://img.shields.io/badge/PSWD-success">              | PASSWORD data validation           |
+| <img src ="https://img.shields.io/badge/PSWD_VERIFY-success">       | VERIFY PASSWORD data validation    |
 | <img src ="https://img.shields.io/badge/SPECIAL_CHARACTER-success"> | Special character validation       |
 | <img src ="https://img.shields.io/badge/CUSTOM_EXP-success">        | Special character validation       |
 
@@ -161,7 +162,9 @@ console.log( singleValidation( {
 ```
 <img src ="https://img.shields.io/badge/successful-success">
 
-```>>> { status: true }```
+```javascript
+{ status: true }
+```
 #### more than one validation on the same input
 ```javascript
 console.log( singleValidation( {
@@ -174,7 +177,9 @@ console.log( singleValidation( {
 
 <img src ="https://img.shields.io/badge/successful-success">
 
-```>>> { status: true }```
+```javascript
+{ status: true }
+```
 
 #### Errors
 ```javascript
@@ -188,8 +193,8 @@ console.log( singleValidation( {
 
 <img src ="https://img.shields.io/badge/Error-red">
 
-```
->>> {
+```javascript
+{
   id      : "id_input"
   status  : false
   message : "The data input is not valid, please enter only letters"
@@ -206,8 +211,8 @@ console.log( singleValidation( {
 
 <img src ="https://img.shields.io/badge/Error-red">
 
-```
->>> {
+```javascript
+{
   id      : "id_input"
   status  : false
   message : "The data input is required"
@@ -275,15 +280,17 @@ console.log( multiValidation( DATA, "EN" ) )
 
 <img src ="https://img.shields.io/badge/successful-success">
 
-``` >>> { status: true } ```
+```javascript
+{ status: true }
+```
 
 ```javascript
 console.log( multiValidation( DATA_ERRORS, "EN" ) )
 ```
 <img src ="https://img.shields.io/badge/Error-red">
 
-```
->>> {
+```javascript
+{
   id      : "id_input_one"
   status  : false
   message : "The data input_one is not valid, please enter only letters"
@@ -351,15 +358,17 @@ console.log( multiValidationErrors( DATA, "EN" ) )
 
 <img src ="https://img.shields.io/badge/successful-success">
 
-``` >>> { status: true } ```
+```javascript
+{ status: true }
+```
 
 ```javascript
 console.log( multiValidationErrors( DATA_ERRORS,"EN" ) )
 ```
 <img src ="https://img.shields.io/badge/Error-red">
 
-```
->>> {
+```javascript
+{
   status : false,
   errors : [
     {
@@ -400,8 +409,8 @@ console.log( singleValidation( {
 
 <img src ="https://img.shields.io/badge/Error-red">
 
-```
->>> {
+```javascript
+{
   id      : "id_input"
   status  : false
   message : "The data input is not valid, please enter only letters"
@@ -449,8 +458,8 @@ console.log( multiValidationErrors( [
 
 <img src ="https://img.shields.io/badge/Error-red">
 
-```
->>>  {
+```javascript
+{
   "status": false,
   "errors": [
       {
@@ -468,7 +477,7 @@ console.log( multiValidationErrors( [
 ```
 ### Example message custom
 
-```
+```javascript
 > To define a custom message you have to add the word "message" + the type of validation
 
 Example:
@@ -562,8 +571,8 @@ console.log( multiValidationErrors( DATA_ERRORS ), "EN" ) // <=== parameter lang
 
 <img src ="https://img.shields.io/badge/Error-red">
 
-```
->>> {
+```javascript
+{
   "status" : false,
   "errors" : [
     {
@@ -600,10 +609,12 @@ console.log( multiValidationErrors( DATA_ERRORS ), "EN" ) // <=== parameter lang
 **EN**
 ```javascript
 console.log( singleValidation( {
-  id: 'password',
-  type: ["R","PASSWORD"],
-  value: "sasasd983443@s",
-} ), "EN" ) // <=== parameter language
+  id: 'passwor',
+  title: 'password',
+  messagePASSWORD: "Message custom PASSWORD",
+  type: ["R","PSWD"],
+  value: ".",
+},), "EN" ) // <=== parameter language
 ```
 **validatios password**
 
@@ -616,38 +627,71 @@ console.log( singleValidation( {
 
 <img src ="https://img.shields.io/badge/Error-red">
 
-```
->>> {
-  "status": false,
-    "id": "password",
-    "data": [
-        {
-            "status": true,
+```javascript
+{
+    "id": "passwor",
+    "message": "Message custom PASSWORD",
+    "status": false,
+    "data": {
+        "PASSWORD_LOWERCASE": {
+            "id": "passwor",
+            "message": "At least one lowercase letter",
+            "status": false,
             "type": "PASSWORD_LOWERCASE"
         },
-        {
-            "id": "pass",
+        "PASSWORD_UPPERCASE": {
+            "id": "passwor",
             "message": "At least one uppercase letter",
             "status": false,
             "type": "PASSWORD_UPPERCASE"
         },
-        {
-            "status": true,
+        "PASSWORD_DIGIT": {
+            "id": "passwor",
+            "message": "At least one digit",
+            "status": false,
             "type": "PASSWORD_DIGIT"
         },
-        {
-            "status": true,
+        "PASSWORD_SPECIAL_CHARACTER": {
+            "id": "passwor",
+            "message": "At least one special character $@$!%*?&",
+            "status": false,
             "type": "PASSWORD_SPECIAL_CHARACTER"
         },
-        {
-            "status": true,
+        "PASSWORD_MIN": {
+            "id": "passwor",
+            "message": "Minimum 8 in length",
+            "status": false,
             "type": "PASSWORD_MIN"
         },
-        {
-            "status": true,
+        "PASSWORD_MAX": {
+            "id": "passwor",
+            "message": "Maximum 15 in length",
+            "status": false,
             "type": "PASSWORD_MAX"
         }
-    ]
+    }
+}
+```
+
+
+### Example validation verify password
+
+**EN**
+```javascript
+console.log( singleValidation({
+  id: 'passwor-one',
+  type: ['R','PSWD_VERIFY'],
+  value: '12345',
+  valueCompare:'6789'
+}), "EN" ) // <=== parameter language
+```
+<img src ="https://img.shields.io/badge/Error-red">
+
+```javascript
+{
+    "id": "passwor-one",
+    "message": "Those passwords didn’t match.",
+    "status": false
 }
 ```
 

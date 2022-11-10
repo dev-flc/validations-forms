@@ -2,6 +2,7 @@ import {
   isRequired,
   validationsExpression,
   validationsPassword,
+  validationsPasswordVerify,
   isRequiredCombo,
 } from "./functions.js"
 import { TYPE_VALIDATION as TV } from "./../constants/constants.js"
@@ -54,6 +55,10 @@ export const configurationValidations = {
   [TV.RFC_KEY_CODE]: {
     expression: EXP[TV.RFC_KEY_CODE],
     func: validationsExpression,
+  },
+
+  [TV.PASSWORD_VERIFY]: {
+    func: validationsPasswordVerify,
   },
 
   [TV.PASSWORD]: {

@@ -75,45 +75,44 @@ export const isRequiredCombo = ({
     : getResul(title, id, language, type, message)
 
 /* Validation password */
-export const validationsPassword = ({ value, language, expression, id }) => {
-  const {
-    PASSWORD_LOWERCASE,
-    PASSWORD_UPPERCASE,
-    PASSWORD_DIGIT,
-    PASSWORD_SPECIAL_CHARACTER,
-    PASSWORD_MIN,
-    PASSWORD_MAX,
-  } = expression
-
+export const validationsPassword = ({
+  value,
+  type,
+  language,
+  expression,
+  id,
+  title = "",
+  message = "",
+}) => {
   const validations = [
     {
       id,
-      newExpression: PASSWORD_LOWERCASE,
+      newExpression: expression[TV.PASSWORD_LOWERCASE],
       type: TV.PASSWORD_LOWERCASE,
     },
     {
       id,
-      newExpression: PASSWORD_UPPERCASE,
+      newExpression: expression[TV.PASSWORD_UPPERCASE],
       type: TV.PASSWORD_UPPERCASE,
     },
     {
       id,
-      newExpression: PASSWORD_DIGIT,
+      newExpression: expression[TV.PASSWORD_DIGIT],
       type: TV.PASSWORD_DIGIT,
     },
     {
       id,
-      newExpression: PASSWORD_SPECIAL_CHARACTER,
+      newExpression: expression[TV.PASSWORD_SPECIAL_CHARACTER],
       type: TV.PASSWORD_SPECIAL_CHARACTER,
     },
     {
       id,
-      newExpression: PASSWORD_MIN,
+      newExpression: expression[TV.PASSWORD_MIN],
       type: TV.PASSWORD_MIN,
     },
     {
       id,
-      newExpression: PASSWORD_MAX,
+      newExpression: expression[TV.PASSWORD_MAX],
       type: TV.PASSWORD_MAX,
     },
   ]
@@ -133,7 +132,29 @@ export const validationsPassword = ({ value, language, expression, id }) => {
     return data
   })
 
-  const dataErrors = data.filter((item) => item.status === false).length
+  const errorsLength = data.filter((item) => item.status === false).length
 
-  return { status: !dataErrors >= 1, id, data }
+  const errors = data.reduce((newObject, item) => {
+    return { ...newObject, [item.type]: item }
+  }, {})
+
+  const result =
+    !errorsLength >= 1
+      ? { status: true, id }
+      : getResul(title, id, language, type, message)
+
+  return { ...result, errors }
 }
+
+export const validationsPasswordVerify = ({
+  value,
+  valueVerify,
+  type,
+  language,
+  id,
+  title = "",
+  message = "",
+}) =>
+  value === valueVerify
+    ? STATUS.TRUE
+    : getResul(title, id, language, type, message)
