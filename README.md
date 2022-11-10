@@ -632,7 +632,7 @@ console.log( singleValidation( {
     "id": "passwor",
     "message": "Message custom PASSWORD",
     "status": false,
-    "data": {
+    "errors": {
         "PASSWORD_LOWERCASE": {
             "id": "passwor",
             "message": "At least one lowercase letter",
