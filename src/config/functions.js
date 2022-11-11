@@ -46,12 +46,13 @@ export const validationsExpression = ({
 
   let result = { ...STATUS.FALSE, message: ERROR_EXPRESSION, id }
   if (expression) {
+    const resultMessage = getResul(title, id, language, type, message)
     result = RegExp(expression).test(isString(value) ? value.trim() : value)
       ? applyReturnType
-        ? { ...STATUS.TRUE, type }
+        ? { ...resultMessage, ...STATUS.TRUE, type }
         : STATUS.TRUE
       : applyReturnType
-      ? { ...getResul(title, id, language, type, message), type }
+      ? { ...resultMessage, type }
       : getResul(title, id, language, type, message)
   }
   return result
@@ -128,7 +129,6 @@ export const validationsPassword = ({
       message,
       applyReturnType: true,
     })
-
     return data
   })
 
@@ -140,7 +140,7 @@ export const validationsPassword = ({
 
   const result =
     !errorsLength >= 1
-      ? { status: true, id }
+      ? { status: true }
       : getResul(title, id, language, type, message)
 
   return { ...result, errors }

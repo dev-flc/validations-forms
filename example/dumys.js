@@ -4,7 +4,7 @@ export const DUMMY_DATA = [
     title: 'password two',
     messagePSWD: 'Message custom PASSWORD TWO',
     type: ['R','PSWD'],
-    value: '.',
+    value: 'ferF',
   },
   {
     id: 'passwor-one',
