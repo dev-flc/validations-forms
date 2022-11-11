@@ -148,13 +148,13 @@ export const validationsPassword = ({
 
 export const validationsPasswordVerify = ({
   value,
-  valueVerify,
+  valueCompare,
   type,
   language,
   id,
   title = "",
   message = "",
 }) =>
-  value === valueVerify
+  value === valueCompare
     ? STATUS.TRUE
     : getResul(title, id, language, type, message)

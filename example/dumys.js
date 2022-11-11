@@ -10,8 +10,8 @@ export const DUMMY_DATA = [
     id: 'passwor-one',
     title: 'password one',
     type: ['R','PSWD_VERIFY'],
-    value: '12345',
-    valueCompare:'6789'
+    value: '123456',
+    valueCompare:'12345'
   },
   {
     id: 'one',
