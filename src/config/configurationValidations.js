@@ -23,8 +23,18 @@ export const configurationValidations = {
     func: validationsExpression,
   },
 
+  [TV.ND]: {
+    expression: EXP[TV.ND],
+    func: validationsExpression,
+  },
+
   [TV.TN]: {
     expression: EXP[TV.TN],
+    func: validationsExpression,
+  },
+
+  [TV.TN_OMIT_ACCENTS]: {
+    expression: EXP[TV.TN_OMIT_ACCENTS],
     func: validationsExpression,
   },
 
