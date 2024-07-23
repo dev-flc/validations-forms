@@ -1,6 +1,6 @@
 {
   "name": "validations-forms",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "bookshop validations-forms",
   "main": "package/index.js",
   "files": [
