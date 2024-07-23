@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish-gpr:
-    name: 🚀 publish-validations-forms
+    name: 🚀 init publish-validations-forms
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -18,9 +18,9 @@ jobs:
       - name: ✅ node
         uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 18
           registry-url: "https://registry.npmjs.org"
-          scope: "@ferch01992"
+          scope: "@dev-flc"
       - name: 📚 install-dependencies
         run: npm install
       - name: 🗑️ remove-dependencies
@@ -30,4 +30,4 @@ jobs:
       - name: 📦 publish-package
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.VALIDATIONS_FORMS_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NEW_VALIDATIONS_FORMS_TOKEN}}
